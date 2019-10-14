@@ -25,6 +25,18 @@ public class Student {
         return average;
     }
 
+    public Class findClassByName(String name) {
+      for (Class c : classes) {
+        if (c.getName().equals(name))
+          return c;
+      }
+      return null;
+    }
+
+    public void updateAverage() {
+      this.average = getAverage();
+    }
+
     public void setAverage(double average) {
         this.average = average;
     }
@@ -74,5 +86,9 @@ public class Student {
             return "F";
         }
 
+    }
+
+    public boolean isEqual(Student student) {
+      return this.getName() == student.getName();
     }
 }

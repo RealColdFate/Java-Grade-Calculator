@@ -29,15 +29,24 @@ public class Class  {
     }
 
 
-    //Todo fix average to work with weight
+    // TODO fix average to work with weight
     public double getAverage() {
         double sum = 0;
         for (ClassField f : this.classFields)
-            sum += f.getAverage();
+            sum += f.getAverage() * (10 * f.getWeight());
         average = sum / this.classFields.size();
 
-        return average;
+        return  average;
     }
+
+    public boolean isEqual(Class c) {
+      return this.getName() == c.getName();
+    }
+
+    public void updateAverage() {
+      this.average = getAverage();
+    }
+
 
     public void addClassField(String name, double weight) {
         this.classFields.add(new ClassField(name, weight));

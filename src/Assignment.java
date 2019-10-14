@@ -23,4 +23,9 @@ public class Assignment  {
     public void setAverage(double average) {
         this.average = average;
     }
+    public boolean isEqual(Assignment assignment) {
+      return this.getAverage() == assignment.getAverage() && this.getName() == assignment.getName();
+    }
+
+
 }

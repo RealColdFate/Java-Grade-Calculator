@@ -20,6 +20,10 @@ public class ClassField {
         this.assignments = new ArrayList<Assignment>();
     }
 
+    public void updateAverage() {
+      this.average = getAverage();
+    }
+
 
     public double getAverage() {
         double sum = 0;
@@ -69,5 +73,9 @@ public class ClassField {
 
     public void setAssignments(ArrayList<Assignment> assignments) {
         this.assignments = assignments;
+    }
+
+    public boolean isEqual(ClassField classField) {
+      return this.getName() == classField.getName();
     }
 }
